@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-card">
+
+        <div class="flower">✿</div>
+
+        <h1>Create Account</h1>
+
+        <p class="subtitle">
+            Create your account to start organizing ♡
+        </p>
+
+        <form id="registerForm">
+
+            <label>Name</label>
+            <input
+                id="name"
+                type="text"
+                maxlength="60"
+                required
+                placeholder="Your name"
+            >
+
+            <label>Email</label>
+            <input
+                id="email"
+                type="email"
+                required
+                placeholder="you@example.com"
+            >
+
+            <label>Password (at least 8 characters)</label>
+            <input
+                id="password"
+                type="password"
+                minlength="8"
+                required
+                placeholder="Create password"
+            >
+
+            <button type="submit">
+                Create Account ♡
+            </button>
+
+        </form>
+
+        <p id="message" role="status"></p>
+
+        <p>
+            Already registered?
+            <a href="login.html">Log in</a>
+        </p>
+
+        <a href="/">Back to Portfolio</a>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

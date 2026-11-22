@@ -1,0 +1,568 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #f7c6d9;
+    --dark-pink: #c85d87;
+    --light-pink: #fff0f6;
+    --soft-pink: #ffe0ec;
+    --white: #ffffff;
+    --text: #604653;
+    --muted: #957586;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--light-pink);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark-pink);
+}
+
+button {
+    font-family: inherit;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+
+    background: var(--white);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    box-shadow: 0 3px 15px rgba(200, 93, 135, 0.08);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--dark-pink);
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--dark-pink);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 70px 10%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #ffe0ec,
+            #fff7fb
+        );
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.welcome {
+    color: var(--dark-pink);
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--dark-pink);
+}
+
+.hero-text {
+    max-width: 500px;
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-decoration {
+    font-size: 80px;
+    line-height: 1.5;
+    color: var(--dark-pink);
+    opacity: 0.6;
+    text-align: center;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn,
+button {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    background: var(--dark-pink);
+    color: white;
+
+    border: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn:hover,
+button:hover {
+    transform: translateY(-2px);
+    background: #b34b75;
+}
+
+.btn.secondary {
+    background: white;
+    color: var(--dark-pink);
+    border: 1px solid var(--pink);
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section {
+    padding: 75px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-label {
+    color: var(--dark-pink);
+    font-size: 14px;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+    margin-top: 5px;
+    color: var(--dark-pink);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-card {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 5px 20px rgba(200, 93, 135, 0.08);
+}
+
+.about-card p {
+    margin-bottom: 15px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 20px;
+}
+
+.skill-card {
+    text-align: center;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(200, 93, 135, 0.08);
+
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card span {
+    font-size: 30px;
+    color: var(--dark-pink);
+}
+
+.skill-card h3 {
+    color: var(--dark-pink);
+    margin: 10px 0;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 25px;
+}
+
+.project-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 5px 20px rgba(200, 93, 135, 0.08);
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-icon {
+    font-size: 40px;
+    color: var(--dark-pink);
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    color: var(--dark-pink);
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    margin-bottom: 15px;
+}
+
+.project-tags {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-card {
+    max-width: 600px;
+
+    margin: auto;
+
+    text-align: center;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+}
+
+.contact-card p {
+    margin-bottom: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    background: white;
+
+    color: var(--muted);
+}
+
+/* =========================
+   AUTH PAGES
+========================= */
+
+.auth-page,
+.dashboard-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #ffe0ec,
+            #fff7fb
+        );
+}
+
+.auth-card {
+    width: min(92%, 430px);
+
+    margin: 30px auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 35px rgba(200, 93, 135, 0.12);
+
+    text-align: center;
+}
+
+.auth-card h1 {
+    color: var(--dark-pink);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.flower {
+    font-size: 45px;
+    color: var(--dark-pink);
+    margin-bottom: 10px;
+}
+
+.auth-card label {
+    display: block;
+
+    text-align: left;
+
+    margin: 12px 0 5px;
+
+    font-weight: bold;
+}
+
+.auth-card input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid var(--pink);
+
+    border-radius: 12px;
+
+    background: #fff8fb;
+
+    outline: none;
+
+    color: var(--text);
+}
+
+.auth-card input:focus {
+    border-color: var(--dark-pink);
+
+    box-shadow:
+        0 0 0 3px rgba(200, 93, 135, 0.1);
+}
+
+.auth-card button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.auth-card p {
+    margin-top: 15px;
+}
+
+.auth-card a {
+    display: inline-block;
+    margin-top: 12px;
+}
+
+#message {
+    color: var(--dark-pink);
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    width: min(94%, 700px);
+}
+
+.logout-btn {
+    width: auto !important;
+    margin: 0 0 25px !important;
+}
+
+#taskList {
+    list-style: none;
+    margin-top: 25px;
+}
+
+#taskList li {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 12px 0;
+
+    padding: 15px;
+
+    background: var(--light-pink);
+
+    border: 1px solid var(--soft-pink);
+
+    border-radius: 15px;
+}
+
+#taskList li span {
+    flex: 1;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+#taskList li button {
+    width: auto;
+    margin: 0;
+
+    padding: 8px 12px;
+
+    font-size: 12px;
+}
+
+#taskList li button:last-child {
+    background: #e9a2ba;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-decoration {
+        font-size: 45px;
+    }
+
+    .section {
+        padding: 50px 6%;
+    }
+
+    .auth-card {
+        padding: 25px;
+    }
+
+    #taskList li {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #taskList li button {
+        width: 100%;
+    }
+}

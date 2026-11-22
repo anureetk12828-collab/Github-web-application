@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Task Manager</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <main class="auth-card dashboard">
+
+        <div class="flower">✿</div>
+
+        <h1>My Task Manager</h1>
+
+        <p class="subtitle">
+            A little progress every day ♡
+        </p>
+
+        <button id="logoutButton" type="button" class="logout-btn">
+            Log out
+        </button>
+
+        <form id="taskForm">
+
+            <label for="taskTitle">
+                Add a new task
+            </label>
+
+            <input
+                id="taskTitle"
+                maxlength="120"
+                required
+                placeholder="What would you like to do?"
+            >
+
+            <button type="submit">
+                Add Task ♡
+            </button>
+
+        </form>
+
+        <p id="taskMessage" role="status"></p>
+
+        <ul id="taskList"></ul>
+
+        <a href="/">Back to Portfolio</a>
+
+    </main>
+
+    <script src="js/tasks.js"></script>
+
+</body>
+</html>
