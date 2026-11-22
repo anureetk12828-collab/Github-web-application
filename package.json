@@ -1,4 +1,11 @@
 {
+  "name": "taskmanager",
+  "version": "1.0.0",
+  "description": "Task Manager Web Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "dotenv": "^18.0.10",
