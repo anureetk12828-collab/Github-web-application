@@ -11,183 +11,432 @@
 
 <body class="dashboard-page">
 
-    <main class="auth-card dashboard">
+<div class="app-layout">
 
-        <div class="flower">✿</div>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
-        <h1>My Task Manager</h1>
+        <div class="brand">
+            <span class="brand-icon">✿</span>
+            <h2>TaskBloom</h2>
+        </div>
 
-        <p class="subtitle">
-            A little progress every day ♡
-        </p>
+        <nav class="sidebar-nav">
 
-        <button id="logoutButton" type="button" class="logout-btn">
-            Log out
-        </button>
-
-        <!-- TASK FORM -->
-        <form id="taskForm">
-
-            <label for="taskTitle">
-                Add a new task
-            </label>
-
-            <input
-                id="taskTitle"
-                maxlength="120"
-                required
-                placeholder="What would you like to do?"
-            >
-
-            <label for="priority">Priority</label>
-
-            <select id="priority">
-                <option value="Low">Low</option>
-                <option value="Medium" selected>Medium</option>
-                <option value="High">High</option>
-            </select>
-
-            <label for="dueDate">Due Date</label>
-
-            <input type="date" id="dueDate">
-
-            <button type="submit">
-                Add Task ♡
+            <button class="nav-item active" data-view="homeView">
+                <span>⌂</span> Dashboard
             </button>
 
-        </form>
+            <button class="nav-item" data-view="tasksView">
+                <span>☷</span> My Tasks
+            </button>
 
-        <p id="taskMessage" role="status"></p>
+            <button class="nav-item" data-view="analyticsView">
+                <span>▥</span> Analytics
+            </button>
+            <button class="nav-item" data-view="calendarView">
+    <span>▦</span> Calendar
+</button>
+<button class="nav-item" data-view="streakView">
+    <span>🔥</span> Streaks
+</button>
 
-        <!-- SEARCH AND FILTERS -->
-        <section class="task-controls">
+            <button class="nav-item" data-view="settingsView">
+                <span>⚙</span> Settings
+            </button>
 
-            <input
-                type="text"
-                id="searchTask"
-                placeholder="Search tasks..."
-            >
+        </nav>
 
-            <select id="statusFilter">
-                <option value="all">All Tasks</option>
-                <option value="pending">Pending</option>
-                <option value="completed">Completed</option>
-            </select>
+        <div class="sidebar-bottom">
+            <button id="logoutButton" class="logout-btn">
+                Log out
+            </button>
+        </div>
 
-            <select id="priorityFilter">
-                <option value="">All Priorities</option>
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
-                <option value="Low">Low</option>
-            </select>
+    </aside>
 
-        </section>
+    <!-- MAIN AREA -->
+    <main class="main-content">
 
-        <!-- EXISTING STATISTICS -->
-        <section class="stats-container">
+        <!-- HOME VIEW -->
+        <section class="page-view active-view" id="homeView">
 
-            <div class="stat-card">
-                <h3>Total Tasks</h3>
-                <p id="totalTasks">0</p>
+            <div class="page-header">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Your little steps matter ♡</p>
+                </div>
             </div>
 
-            <div class="stat-card">
-                <h3>Completed</h3>
-                <p id="completedTasks">0</p>
-            </div>
-
-            <div class="stat-card">
-                <h3>Pending</h3>
-                <p id="pendingTasks">0</p>
-            </div>
-
-        </section>
-
-        <!-- ANALYTICS -->
-        <section class="analytics-section">
-
-            <h2>Task Analytics</h2>
-
-            <p class="analytics-subtitle">
-                Track your productivity and progress ♡
-            </p>
-
-            <div class="analytics-grid">
-
-                <div class="analytics-card total-card">
-                    <span>Total Tasks</span>
-                    <h3 id="analyticsTotal">0</h3>
-                </div>
-
-                <div class="analytics-card completed-card">
-                    <span>Completed</span>
-                    <h3 id="analyticsCompleted">0</h3>
-                </div>
-
-                <div class="analytics-card pending-card">
-                    <span>Pending</span>
-                    <h3 id="analyticsPending">0</h3>
-                </div>
-
-                <div class="analytics-card overdue-card">
-                    <span>Overdue</span>
-                    <h3 id="analyticsOverdue">0</h3>
-                </div>
-
-            </div>
-
-            <!-- PROGRESS -->
-            <div class="analytics-progress-card">
-
-                <h3>Overall Progress</h3>
-
-                <div class="progress-track">
-                    <div
-                        id="analyticsProgressBar"
-                        class="progress-fill"
-                    ></div>
-                </div>
-
-                <p id="analyticsPercentage">
-                    0% Completed
+            <div class="home-welcome">
+                <h2>Welcome to TaskBloom ✿</h2>
+                <p>
+                    Organize your day, manage your tasks
+                    and keep moving forward.
                 </p>
 
+                <button class="primary-btn"
+                        data-view="tasksView">
+                    View My Tasks
+                </button>
             </div>
 
-            <!-- PRIORITY ANALYTICS -->
-            <div class="priority-analytics-card">
+            <div class="stats-container">
 
-                <h3>Priority Overview</h3>
-
-                <div class="priority-row">
-                    <span>High</span>
-                    <span id="analyticsHigh">0</span>
+                <div class="stat-card">
+                    <h3>Total Tasks</h3>
+                    <p id="totalTasks">0</p>
                 </div>
 
-                <div class="priority-row">
-                    <span>Medium</span>
-                    <span id="analyticsMedium">0</span>
+                <div class="stat-card">
+                    <h3>Completed</h3>
+                    <p id="completedTasks">0</p>
                 </div>
 
-                <div class="priority-row">
-                    <span>Low</span>
-                    <span id="analyticsLow">0</span>
+                <div class="stat-card">
+                    <h3>Pending</h3>
+                    <p id="pendingTasks">0</p>
+                </div>
+
+            </div>
+
+            <div class="home-shortcut">
+
+                <h3>Manage your productivity</h3>
+
+                <div class="shortcut-buttons">
+
+                    <button data-view="tasksView">
+                        ☷ Manage Tasks
+                    </button>
+
+                    <button data-view="analyticsView">
+                        ▥ View Analytics
+                    </button>
+
                 </div>
 
             </div>
 
         </section>
 
-        <!-- TASK LIST -->
-        <ul id="taskList"></ul>
+        <!-- TASK VIEW -->
+        <section class="page-view" id="tasksView">
 
-        <a href="/">Back to Portfolio</a>
+            <div class="page-header">
+                <div>
+                    <h1>My Tasks</h1>
+                    <p>Organize your day ♡</p>
+                </div>
+            </div>
+
+            <form id="taskForm">
+
+                <label for="taskTitle">
+                    Add a new task
+                </label>
+
+                <input
+                    id="taskTitle"
+                    maxlength="120"
+                    required
+                    placeholder="What would you like to do?"
+                >
+
+                <label for="priority">Priority</label>
+
+                <select id="priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <label for="dueDate">Due Date</label>
+
+                <input type="date" id="dueDate">
+
+                <button type="submit">
+                    Add Task ♡
+                </button>
+
+            </form>
+
+            <p id="taskMessage" role="status"></p>
+
+            <section class="task-controls">
+
+                <input
+                    type="text"
+                    id="searchTask"
+                    placeholder="Search tasks..."
+                >
+
+                <select id="statusFilter">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+
+                <select id="priorityFilter">
+                    <option value="">All Priorities</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+            </section>
+
+            <ul id="taskList"></ul>
+
+        </section>
+
+        <!-- ANALYTICS VIEW -->
+        <section class="page-view" id="analyticsView">
+
+            <div class="page-header">
+                <div>
+                    <h1>Analytics</h1>
+                    <p>Track your progress ♡</p>
+                </div>
+            </div>
+
+            <section class="analytics-section">
+
+                <div class="analytics-grid">
+
+                    <div class="analytics-card total-card">
+                        <span>Total Tasks</span>
+                        <h3 id="analyticsTotal">0</h3>
+                    </div>
+
+                    <div class="analytics-card completed-card">
+                        <span>Completed</span>
+                        <h3 id="analyticsCompleted">0</h3>
+                    </div>
+
+                    <div class="analytics-card pending-card">
+                        <span>Pending</span>
+                        <h3 id="analyticsPending">0</h3>
+                    </div>
+
+                    <div class="analytics-card overdue-card">
+                        <span>Overdue</span>
+                        <h3 id="analyticsOverdue">0</h3>
+                    </div>
+
+                </div>
+
+                <div class="analytics-progress-card">
+
+                    <h3>Overall Progress</h3>
+
+                    <div class="progress-track">
+                        <div
+                            id="analyticsProgressBar"
+                            class="progress-fill">
+                        </div>
+                    </div>
+
+                    <p id="analyticsPercentage">
+                        0% Completed
+                    </p>
+
+                </div>
+
+                <div class="priority-analytics-card">
+
+                    <h3>Priority Overview</h3>
+
+                    <div class="priority-row">
+                        <span>High</span>
+                        <span id="analyticsHigh">0</span>
+                    </div>
+
+                    <div class="priority-row">
+                        <span>Medium</span>
+                        <span id="analyticsMedium">0</span>
+                    </div>
+
+                    <div class="priority-row">
+                        <span>Low</span>
+                        <span id="analyticsLow">0</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+        <!-- CALENDAR VIEW -->
+<section class="page-view" id="calendarView">
+
+    <div class="page-header">
+        <div>
+            <h1>My Calendar</h1>
+            <p>Stay organized, one day at a time ♡</p>
+        </div>
+    </div>
+
+    <div class="calendar-card">
+
+        <div class="calendar-header">
+            <button id="prevMonth">←</button>
+            <h2 id="calendarMonth"></h2>
+            <button id="nextMonth">→</button>
+        </div>
+
+        <div class="calendar-weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+
+        <div id="calendarGrid" class="calendar-grid"></div>
+
+    </div>
+
+    <div id="calendarTasks" class="calendar-tasks">
+        <h3>Tasks for selected date</h3>
+        <p>Select a date to view tasks.</p>
+    </div>
+
+</section>
+<!-- STREAK VIEW -->
+<section class="page-view" id="streakView">
+
+    <div class="page-header">
+        <div>
+            <h1>My Streaks 🔥</h1>
+            <p>Small steps, consistent progress ♡</p>
+        </div>
+    </div>
+
+    <div class="streak-stats">
+
+        <div class="streak-card current-streak">
+            <span>🔥 Current Streak</span>
+            <h2 id="currentStreak">0 Days</h2>
+            <p>Keep your momentum going!</p>
+        </div>
+
+        <div class="streak-card longest-streak">
+            <span>🏆 Longest Streak</span>
+            <h2 id="longestStreak">0 Days</h2>
+            <p>Your personal record</p>
+        </div>
+
+    </div>
+
+    <div class="streak-week-card">
+
+        <h3>This Week's Activity</h3>
+
+        <div id="streakWeek" class="streak-week"></div>
+
+    </div>
+
+    <div class="streak-calendar-card">
+
+        <h3>Activity Calendar</h3>
+
+        <div class="streak-calendar-header">
+            <button id="streakPrevMonth">←</button>
+            <h3 id="streakMonth"></h3>
+            <button id="streakNextMonth">→</button>
+        </div>
+
+        <div class="streak-calendar-grid" id="streakCalendar"></div>
+
+    </div>
+
+    <div class="streak-milestones-card">
+
+        <h3>Milestones ✿</h3>
+
+        <div class="milestones" id="streakMilestones"></div>
+
+    </div>
+
+</section>
+
+        <!-- SETTINGS VIEW -->
+        <section class="page-view" id="settingsView">
+
+            <div class="page-header">
+                <div>
+                    <h1>Settings</h1>
+                    <p>Personalize your workspace.</p>
+                </div>
+            </div>
+
+            <div class="settings-card">
+                <h3>TaskBloom</h3>
+                <p>Your personal task management workspace.</p>
+                <p>More settings coming soon ♡</p>
+            </div>
+
+        </section>
+
+        <footer class="app-footer">
+            <a href="/">Back to Portfolio</a>
+        </footer>
 
     </main>
 
-    <!-- JAVASCRIPT -->
-    <script src="js/tasks.js"></script>
-    <script src="js/analytics.js"></script>
+</div>
+
+<script src="js/tasks.js"></script>
+<script src="js/analytics.js"></script>
+
+<script>
+    const navigationButtons =
+        document.querySelectorAll("[data-view]");
+
+    const pageViews =
+        document.querySelectorAll(".page-view");
+
+    function switchView(viewId) {
+
+        pageViews.forEach(view => {
+            view.classList.remove("active-view");
+        });
+
+        const selectedView =
+            document.getElementById(viewId);
+
+        if (selectedView) {
+            selectedView.classList.add("active-view");
+        }
+
+        document.querySelectorAll(".nav-item")
+            .forEach(button => {
+                button.classList.remove("active");
+            });
+
+        const activeButton =
+            document.querySelector(
+                '.nav-item[data-view="' + viewId + '"]'
+            );
+
+        if (activeButton) {
+            activeButton.classList.add("active");
+        }
+    }
+
+    navigationButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            switchView(button.dataset.view);
+
+        });
+
+    });
+</script>
 
 </body>
 </html>

@@ -1340,4 +1340,426 @@ textarea {
     .analytics-card h3 {
         font-size: 24px;
     }
+}/* =================================
+   MULTI-VIEW TASKBLOOM LAYOUT
+================================= */
+
+.dashboard-page {
+    margin: 0;
+    padding: 0;
+    background: #f7f4fc;
+    min-height: 100vh;
+}
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 245px;
+    flex-shrink: 0;
+    background: #ffffff;
+    border-right: 1px solid #eee7f5;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.brand h2 {
+    color: #62477e;
+    margin: 0;
+    font-size: 22px;
+}
+
+.brand-icon {
+    color: #a78bfa;
+    font-size: 27px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-item {
+    border: none;
+    background: transparent;
+    text-align: left;
+    padding: 14px;
+    border-radius: 12px;
+    color: #81728f;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.nav-item span {
+    margin-right: 10px;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: #f0e8ff;
+    color: #674b89;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+/* MAIN */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 35px;
+}
+
+.page-view {
+    display: none;
+}
+
+.page-view.active-view {
+    display: block;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.page-header h1 {
+    color: #493765;
+    font-size: 29px;
+    margin: 0 0 8px;
+}
+
+.page-header p {
+    color: #9787a8;
+}
+
+/* HOME */
+
+.home-welcome {
+    padding: 30px;
+    background: linear-gradient(135deg, #eae0ff, #f5e9f8);
+    border-radius: 22px;
+    margin-bottom: 25px;
+}
+
+.home-welcome h2 {
+    color: #604781;
+}
+
+.home-welcome p {
+    color: #806c96;
+}
+
+.primary-btn {
+    border: none;
+    border-radius: 12px;
+    padding: 13px 20px;
+    background: #a78bfa;
+    color: white;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.home-shortcut {
+    padding: 25px;
+    background: white;
+    border-radius: 20px;
+    margin-top: 25px;
+}
+
+.shortcut-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.shortcut-buttons button {
+    padding: 13px 18px;
+    border-radius: 12px;
+    border: 1px solid #eee4f7;
+    background: #f8f4ff;
+    color: #674b89;
+    cursor: pointer;
+}
+
+/* TASK FORM */
+
+#taskForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: white;
+    padding: 24px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+#taskForm input,
+#taskForm select {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    border: 1px solid #e8ddf3;
+    background: #faf8ff;
+}
+
+#taskForm button {
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #a78bfa;
+    color: white;
+    cursor: pointer;
+}
+
+/* FILTERS */
+
+.task-controls {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.task-controls input,
+.task-controls select {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    border: 1px solid #e8ddf3;
+    background: white;
+}
+
+/* STATISTICS */
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 18px;
+    border: 1px solid #eee5f8;
+}
+
+.stat-card h3 {
+    color: #88759d;
+    font-size: 14px;
+}
+
+.stat-card p {
+    font-size: 28px;
+    color: #604781;
+}
+
+/* ANALYTICS */
+
+.analytics-section {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.analytics-card {
+    padding: 23px;
+    border-radius: 18px;
+    background: white;
+}
+
+.analytics-card span {
+    color: #8b7a9d;
+    font-size: 14px;
+}
+
+.analytics-card h3 {
+    font-size: 29px;
+    color: #543d72;
+    margin-top: 12px;
+}
+
+.total-card {
+    background: #f0e8ff;
+}
+
+.completed-card {
+    background: #eaf8f0;
+}
+
+.pending-card {
+    background: #fff6e5;
+}
+
+.overdue-card {
+    background: #fff0f0;
+}
+
+.analytics-progress-card,
+.priority-analytics-card {
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 20px;
+    background: white;
+}
+
+.analytics-progress-card h3,
+.priority-analytics-card h3 {
+    color: #604781;
+}
+
+.progress-track {
+    width: 100%;
+    height: 12px;
+    background: #eee5f8;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #a78bfa;
+    transition: width .4s ease;
+}
+
+.priority-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    color: #76638c;
+}
+
+.priority-row:last-child {
+    border-bottom: none;
+}
+
+/* SETTINGS */
+
+.settings-card {
+    padding: 25px;
+    background: white;
+    border-radius: 20px;
+    color: #76638c;
+}
+
+/* FOOTER */
+
+.app-footer {
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.app-footer a {
+    color: #8d74ac;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        padding: 22px;
+    }
+
+    .analytics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .task-controls {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 12px;
+        border-right: none;
+        border-bottom: 1px solid #eee7f5;
+    }
+
+    .brand {
+        margin-bottom: 12px;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 5px;
+    }
+
+    .nav-item {
+        flex: 0 0 auto;
+        padding: 12px;
+        white-space: nowrap;
+    }
+
+    .sidebar-bottom {
+        margin-top: 12px;
+    }
+
+    .logout-btn {
+        width: 100%;
+    }
+
+    .main-content {
+        padding: 16px;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shortcut-buttons {
+        flex-direction: column;
+    }
+
+    .shortcut-buttons button {
+        width: 100%;
+    }
 }
