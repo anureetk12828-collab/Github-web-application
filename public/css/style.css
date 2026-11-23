@@ -997,3 +997,347 @@ textarea {
         padding: 12px;
     }
 }
+/* ==========================================
+   LAVENDER PRODUCTIVITY DASHBOARD
+========================================== */
+
+.dashboard-page {
+    min-height: 100vh;
+    padding: 35px 16px;
+    background: linear-gradient(135deg, #f8f4ff, #fdf7fc);
+    font-family: Arial, sans-serif;
+}
+
+.auth-card.dashboard {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 26px;
+    box-shadow: 0 12px 40px rgba(117, 89, 150, 0.10);
+}
+
+.dashboard h1 {
+    color: #493765;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.dashboard .subtitle {
+    color: #9585a9;
+    margin-bottom: 25px;
+}
+
+/* FORM */
+
+#taskForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 22px;
+    background: #faf7ff;
+    border-radius: 20px;
+    margin: 25px 0;
+}
+
+#taskForm label {
+    font-size: 14px;
+    color: #69547f;
+    font-weight: 600;
+}
+
+#taskForm input,
+#taskForm select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e8ddf3;
+    background: white;
+    border-radius: 12px;
+    outline: none;
+}
+
+#taskForm input:focus,
+#taskForm select:focus {
+    border-color: #b69bd8;
+}
+
+#taskForm button {
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    background: #a78bfa;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#taskForm button:hover {
+    background: #9273e5;
+}
+
+/* LOGOUT */
+
+.logout-btn {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    background: #f1e8fb;
+    color: #6d518b;
+    cursor: pointer;
+}
+
+/* SEARCH AND FILTERS */
+
+.task-controls {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.task-controls input,
+.task-controls select {
+    padding: 13px;
+    border: 1px solid #e9def4;
+    border-radius: 12px;
+    background: #ffffff;
+    width: 100%;
+}
+
+/* SMALL STAT CARDS */
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 25px 0;
+}
+
+.stat-card {
+    background: #f8f4ff;
+    border: 1px solid #eee5f8;
+    border-radius: 18px;
+    padding: 20px;
+    text-align: left;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #86739e;
+    font-weight: 500;
+}
+
+.stat-card p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #604781;
+    margin-top: 12px;
+}
+
+/* ANALYTICS */
+
+.analytics-section {
+    margin-top: 35px;
+    padding: 25px;
+    background: #f9f6ff;
+    border-radius: 24px;
+    border: 1px solid #eee5f8;
+}
+
+.analytics-section h2 {
+    color: #493765;
+    font-size: 23px;
+    margin: 0;
+}
+
+.analytics-subtitle {
+    color: #9b8aac;
+    font-size: 14px;
+    margin: 8px 0 22px;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.analytics-card {
+    padding: 18px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #eee6f5;
+    box-shadow: 0 3px 10px rgba(90, 60, 120, 0.04);
+}
+
+.analytics-card span {
+    color: #8b7a9d;
+    font-size: 13px;
+}
+
+.analytics-card h3 {
+    color: #543d72;
+    font-size: 28px;
+    margin-top: 12px;
+}
+
+.total-card {
+    background: #f0e8ff;
+}
+
+.completed-card {
+    background: #eaf8f0;
+}
+
+.pending-card {
+    background: #fff6e5;
+}
+
+.overdue-card {
+    background: #fff0f0;
+}
+
+/* PROGRESS */
+
+.analytics-progress-card {
+    margin-top: 20px;
+    background: white;
+    padding: 22px;
+    border-radius: 20px;
+    border: 1px solid #eee6f5;
+}
+
+.analytics-progress-card h3 {
+    color: #604781;
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 12px;
+    background: #eee5f8;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #c4a8f5, #9570dc);
+    border-radius: 30px;
+    transition: width 0.5s ease;
+}
+
+#analyticsPercentage {
+    font-size: 14px;
+    color: #8a75a1;
+    margin-top: 12px;
+}
+
+/* PRIORITY */
+
+.priority-analytics-card {
+    background: white;
+    padding: 22px;
+    margin-top: 20px;
+    border: 1px solid #eee6f5;
+    border-radius: 20px;
+}
+
+.priority-analytics-card h3 {
+    font-size: 17px;
+    color: #604781;
+    margin-bottom: 12px;
+}
+
+.priority-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0eaf6;
+    color: #76638c;
+}
+
+.priority-row:last-child {
+    border-bottom: none;
+}
+
+.priority-row span:last-child {
+    background: #f4edfc;
+    color: #654987;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* TASK LIST */
+
+#taskList {
+    margin-top: 25px;
+    padding: 0;
+    list-style: none;
+}
+
+#taskList li {
+    margin-bottom: 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .dashboard-page {
+        padding: 12px;
+    }
+
+    .auth-card.dashboard {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .dashboard h1 {
+        font-size: 25px;
+    }
+
+    .analytics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .task-controls {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .auth-card.dashboard {
+        padding: 14px;
+    }
+
+    .analytics-section {
+        padding: 14px;
+    }
+
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-card {
+        padding: 16px;
+    }
+
+    .analytics-card h3 {
+        font-size: 24px;
+    }
+}

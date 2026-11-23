@@ -25,6 +25,7 @@
             Log out
         </button>
 
+        <!-- TASK FORM -->
         <form id="taskForm">
 
             <label for="taskTitle">
@@ -37,17 +38,19 @@
                 required
                 placeholder="What would you like to do?"
             >
-<label for="priority">Priority</label>
 
-<select id="priority">
-    <option value="Low">Low</option>
-    <option value="Medium" selected>Medium</option>
-    <option value="High">High</option>
-</select>
+            <label for="priority">Priority</label>
 
-<label for="dueDate">Due Date</label>
+            <select id="priority">
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+            </select>
 
-<input type="date" id="dueDate">
+            <label for="dueDate">Due Date</label>
+
+            <input type="date" id="dueDate">
+
             <button type="submit">
                 Add Task ♡
             </button>
@@ -56,54 +59,135 @@
 
         <p id="taskMessage" role="status"></p>
 
+        <!-- SEARCH AND FILTERS -->
+        <section class="task-controls">
+
+            <input
+                type="text"
+                id="searchTask"
+                placeholder="Search tasks..."
+            >
+
+            <select id="statusFilter">
+                <option value="all">All Tasks</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+            </select>
+
+            <select id="priorityFilter">
+                <option value="">All Priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+
+        </section>
+
+        <!-- EXISTING STATISTICS -->
+        <section class="stats-container">
+
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+        </section>
+
+        <!-- ANALYTICS -->
+        <section class="analytics-section">
+
+            <h2>Task Analytics</h2>
+
+            <p class="analytics-subtitle">
+                Track your productivity and progress ♡
+            </p>
+
+            <div class="analytics-grid">
+
+                <div class="analytics-card total-card">
+                    <span>Total Tasks</span>
+                    <h3 id="analyticsTotal">0</h3>
+                </div>
+
+                <div class="analytics-card completed-card">
+                    <span>Completed</span>
+                    <h3 id="analyticsCompleted">0</h3>
+                </div>
+
+                <div class="analytics-card pending-card">
+                    <span>Pending</span>
+                    <h3 id="analyticsPending">0</h3>
+                </div>
+
+                <div class="analytics-card overdue-card">
+                    <span>Overdue</span>
+                    <h3 id="analyticsOverdue">0</h3>
+                </div>
+
+            </div>
+
+            <!-- PROGRESS -->
+            <div class="analytics-progress-card">
+
+                <h3>Overall Progress</h3>
+
+                <div class="progress-track">
+                    <div
+                        id="analyticsProgressBar"
+                        class="progress-fill"
+                    ></div>
+                </div>
+
+                <p id="analyticsPercentage">
+                    0% Completed
+                </p>
+
+            </div>
+
+            <!-- PRIORITY ANALYTICS -->
+            <div class="priority-analytics-card">
+
+                <h3>Priority Overview</h3>
+
+                <div class="priority-row">
+                    <span>High</span>
+                    <span id="analyticsHigh">0</span>
+                </div>
+
+                <div class="priority-row">
+                    <span>Medium</span>
+                    <span id="analyticsMedium">0</span>
+                </div>
+
+                <div class="priority-row">
+                    <span>Low</span>
+                    <span id="analyticsLow">0</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TASK LIST -->
         <ul id="taskList"></ul>
 
         <a href="/">Back to Portfolio</a>
 
     </main>
-    <section class="task-controls">
 
-    <input
-        type="text"
-        id="searchTask"
-        placeholder="Search tasks..."
-    >
-
-    <select id="statusFilter">
-        <option value="all">All Tasks</option>
-        <option value="pending">Pending</option>
-        <option value="completed">Completed</option>
-    </select>
-
-    <select id="priorityFilter">
-        <option value="">All Priorities</option>
-        <option value="High">High</option>
-        <option value="Medium">Medium</option>
-        <option value="Low">Low</option>
-    </select>
-
-</section>
-
-<section class="stats-container">
-
-    <div class="stat-card">
-        <h3>Total Tasks</h3>
-        <p id="totalTasks">0</p>
-    </div>
-
-    <div class="stat-card">
-        <h3>Completed</h3>
-        <p id="completedTasks">0</p>
-    </div>
-
-    <div class="stat-card">
-        <h3>Pending</h3>
-        <p id="pendingTasks">0</p>
-    </div>
-
-</section>
-
+    <!-- JAVASCRIPT -->
     <script src="js/tasks.js"></script>
+    <script src="js/analytics.js"></script>
 
 </body>
 </html>
