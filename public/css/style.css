@@ -641,3 +641,359 @@ footer {
         width: 100%;
     }
 }
+/* =================================
+   MOBILE RESPONSIVE DESIGN
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+/* Responsive containers */
+.container,
+.dashboard-container,
+.main-container,
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Forms */
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+    font: inherit;
+}
+
+input,
+select,
+textarea {
+    min-width: 0;
+}
+
+/* Task cards */
+.task-card {
+    width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Statistics */
+.stats-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .container,
+    .dashboard-container,
+    .main-container,
+    main {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .task-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .task-controls input,
+    .task-controls select {
+        width: 100%;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 8px;
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 17px;
+    }
+
+    .container,
+    .dashboard-container,
+    .main-container,
+    main {
+        width: 100%;
+        padding: 12px;
+        margin: 0;
+    }
+
+    /* Navigation */
+    nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a,
+    nav button {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Statistics cards */
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        width: 100%;
+        padding: 18px;
+    }
+
+    /* Task controls */
+    .task-controls {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .task-controls input,
+    .task-controls select,
+    #priority,
+    #dueDate {
+        width: 100%;
+        min-height: 44px;
+    }
+
+    /* Forms */
+    form {
+        width: 100%;
+    }
+
+    form input,
+    form select,
+    form textarea {
+        width: 100%;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    form button {
+        width: 100%;
+        min-height: 44px;
+    }
+
+    /* Task cards */
+    .task-card {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 14px;
+    }
+
+    /* Task action buttons */
+    .task-card button {
+        min-height: 40px;
+        margin: 4px;
+    }
+
+    /* Prevent overflowing text */
+    p,
+    h1,
+    h2,
+    h3,
+    span {
+        overflow-wrap: anywhere;
+    }
+
+    /* Tables */
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+}
+/* ==========================
+   ANALYTICS DASHBOARD
+========================== */
+
+.analytics-section {
+    margin: 30px 0;
+    padding: 24px;
+    border-radius: 20px;
+    background: #faf7ff;
+}
+
+.analytics-section h2 {
+    color: #493465;
+    margin-bottom: 8px;
+}
+
+.analytics-subtitle {
+    color: #82738e;
+    margin-bottom: 22px;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.analytics-card {
+    padding: 22px;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(80, 50, 100, 0.06);
+}
+
+.analytics-card span {
+    color: #786787;
+    font-size: 14px;
+}
+
+.analytics-card h3 {
+    font-size: 30px;
+    margin: 12px 0 0;
+    color: #493465;
+}
+
+.total-card {
+    border-top: 4px solid #a78bfa;
+}
+
+.completed-card {
+    border-top: 4px solid #70c79b;
+}
+
+.pending-card {
+    border-top: 4px solid #f4c66b;
+}
+
+.overdue-card {
+    border-top: 4px solid #ef8a8a;
+}
+
+.analytics-progress-card,
+.priority-analytics-card {
+    background: white;
+    padding: 22px;
+    border-radius: 16px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(80, 50, 100, 0.06);
+}
+
+.analytics-progress-card h3,
+.priority-analytics-card h3 {
+    color: #493465;
+    margin-bottom: 16px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 14px;
+    border-radius: 20px;
+    background: #eee5f8;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #a78bfa;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+#analyticsPercentage {
+    color: #786787;
+    margin-top: 12px;
+}
+
+.priority-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+    color: #655476;
+}
+
+.priority-row:last-child {
+    border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .analytics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .analytics-section {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-card h3 {
+        font-size: 26px;
+    }
+
+    .analytics-section {
+        padding: 12px;
+    }
+}
